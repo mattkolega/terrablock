@@ -1,3 +1,15 @@
+# Build directories
+build/
+
+# VSCode specific directories
+.vscode
+
+# macOS specific files
+.DS_Store
+
+# clangd directories
+.cache/
+
 # Prerequisites
 *.d
 
