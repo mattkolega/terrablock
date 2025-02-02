@@ -34,11 +34,15 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(fmt SDL3)
 
+add_subdirectory(external/glad)
+
 add_executable(terrablock
     src/main.cpp
+    src/game.cpp
 )
 
 target_link_libraries(terrablock PRIVATE
+    glad
     fmt::fmt
     SDL3::SDL3
 )
