@@ -24,6 +24,13 @@ FetchContent_Declare(
     GIT_TAG 11.1.1
     GIT_SHALLOW 1
 )
+# Get GLM library for openGL maths
+FetchContent_Declare(
+    glm
+    GIT_REPOSITORY https://github.com/g-truc/glm.git
+    GIT_TAG 1.0.1
+    GIT_SHALLOW 1
+)
 # Get SDL3 for multimedia functionality
 FetchContent_Declare(
     SDL3
@@ -32,7 +39,7 @@ FetchContent_Declare(
     GIT_SHALLOW 1
 )
 
-FetchContent_MakeAvailable(fmt SDL3)
+FetchContent_MakeAvailable(fmt glm SDL3)
 
 add_subdirectory(external/glad)
 
@@ -42,7 +49,8 @@ add_executable(terrablock
 )
 
 target_link_libraries(terrablock PRIVATE
-    glad
     fmt::fmt
+    glad
+    glm::glm
     SDL3::SDL3
 )
