@@ -69,9 +69,11 @@ void Game::handleEvents() {
     while (SDL_PollEvent(&m_event)) {
         switch (m_event.type) {
             case SDL_EVENT_KEY_DOWN:
-                switch (m_event.key.key) {
+                switch (m_event.key.scancode) {
                     case SDL_SCANCODE_ESCAPE:
                         m_quit = true;
+                        break;
+                    default:
                         break;
                 }
                 break;
